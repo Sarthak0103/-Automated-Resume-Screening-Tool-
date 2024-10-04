@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Resume Screening</title>
+</head>
+<body>
+    <h1>Automated Resume Screening Tool</h1>
+    <form action="/screen" method="POST">
+        <label for="resume">Paste Resume Text:</label><br>
+        <textarea id="resume" name="resume" rows="10" cols="50"></textarea><br><br>
+        
+        <label for="job_description">Paste Job Description:</label><br>
+        <textarea id="job_description" name="job_description" rows="10" cols="50"></textarea><br><br>
+        
+        <button type="submit">Screen Resume</button>
+    </form>
+
+    {% if score %}
+    <h2>Match Score: {{ score }}%</h2>
+    <p>Matched Keywords: {{ matched_keywords }}</p>
+    {% endif %}
+</body>
+</html>
